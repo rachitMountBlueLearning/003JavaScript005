@@ -7,6 +7,5 @@ module.exports.callback1 = (boardID, getBoardInfo) => {
     setTimeout(() => {
         const BOARDS = require('./data/boards.json');
         console.log(getBoardInfo(boardID, BOARDS));
-        return getBoardInfo(boardID, BOARDS);
     }, 2 * 1000);
 }

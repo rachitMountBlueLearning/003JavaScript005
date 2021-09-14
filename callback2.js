@@ -7,6 +7,5 @@ module.exports.callback2 = (boardID, getLists) => {
     setTimeout(() => {
         const LISTS = require('./data/lists.json');
         console.log(getLists(boardID, LISTS));
-        return getLists(boardID, LISTS);
     }, 2 * 1000);
 }
