@@ -3,7 +3,7 @@
 // to it from the given data in lists.json. Then pass control back to the code that called it by using a callback function.
 
 
-module.exports.callback1 = (boardID, getLists) => {
+module.exports.callback2 = (boardID, getLists) => {
     setTimeout(() => {
         const LISTS = require('./data/lists.json');
         console.log(getLists(boardID, LISTS));

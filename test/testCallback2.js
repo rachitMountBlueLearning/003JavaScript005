@@ -1,4 +1,4 @@
-const callback2 = require('../callback2').callback1;
+const callback2 = require('../callback2').callback2;
 
 function getLists(boardID, lists) {
     return lists[boardID] === undefined ? [] : lists[boardID];
