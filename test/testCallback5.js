@@ -12,4 +12,4 @@ function getCards(listID, cards) {
     return cards[listID] === undefined ? [] : cards[listID];
 }
 
-callback5('mcu453ed', 'qwsa221', 'jwkh245', getBoardInfo, getLists, getCards);
+callback5('mcu453ed', ['qwsa221', 'jwkh245'], getBoardInfo, getLists, getCards);
