@@ -1,7 +1,5 @@
 const callback2 = require('../callback2').callback2;
 
-function getLists(boardID, lists) {
-    return lists[boardID] === undefined ? [] : lists[boardID];
-}
-
-callback2('mcu453ed', getLists);
+callback2('mcu453ed')
+    .then((lists) => console.log(lists))
+    .catch((error) => console.log(error));
