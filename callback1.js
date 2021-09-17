@@ -3,9 +3,14 @@
 // from the given list of boards in boards.json and then pass control back to the code that called it by using a callback function.
 
 
-module.exports.callback1 = (boardID, getBoardInfo) => {
-    setTimeout(() => {
-        const BOARDS = require('./data/boards.json');
-        console.log(getBoardInfo(boardID, BOARDS));
-    }, 2 * 1000);
+module.exports.callback1 = (boardID) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const BOARDS = require('./data/boards.json');
+            BOARDS.filter(({id}) => id === boardID);
+            BOARDS ?
+                resolve(BOARDS.filter(({id}) => id === boardID)) :
+                reject('File is empty');
+        }, 2 * 1000);
+    });
 }
