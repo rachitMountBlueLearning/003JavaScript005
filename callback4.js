@@ -7,12 +7,24 @@
 // Get all cards for the Mind list simultaneously
 
 
-module.exports.callback4 = (boardID, listID, getBoardInfo, getLists, getCards) => {
+module.exports.callback4 = (boardID, listID) => {
     const callback1 = require('./callback1').callback1;
     const callback2 = require('./callback2').callback2;
     const callback3 = require('./callback3').callback3;
 
-    setTimeout(() => {callback1(boardID, getBoardInfo)}, 0);
-    setTimeout(() => {callback2(boardID, getLists)}, 0);
-    setTimeout(() => {callback3(listID, getCards)}, 0);
+    setTimeout(() => {
+        callback1(boardID)
+            .then((boardInfo) => console.log(boardInfo))
+            .catch((error) => console.log(error));
+    }, 0);
+    setTimeout(() => {
+        callback2(boardID)
+            .then((lists) => console.log(lists))
+            .catch((error) => console.log(error));
+    }, 0);
+    setTimeout(() => {
+        callback3(listID)
+            .then((cards) => console.log(cards))
+            .catch((error) => console.log(error));
+    }, 0);
 }
