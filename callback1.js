@@ -7,7 +7,6 @@ module.exports.callback1 = (boardID) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const BOARDS = require('./data/boards.json');
-            BOARDS.filter(({id}) => id === boardID);
             BOARDS ?
                 resolve(BOARDS.filter(({id}) => id === boardID)) :
                 reject('File is empty');
